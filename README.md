@@ -11,3 +11,7 @@ Create Function
 Update Function Code
 
 `aws lambda update-function-code --function-name java-template --zip-file fileb://build/libs/aws-lambda-template-1.0-SNAPSHOT.jar`
+
+OR
+
+`gradlew deploy`

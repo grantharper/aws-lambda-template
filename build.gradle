@@ -8,7 +8,15 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+task deploy(type: Exec){
+    workingDir 'build/libs'
+    commandLine 'cmd', '/c', 'aws lambda update-function-code --function-name java-template --zip-file fileb://aws-lambda-template-1.0-SNAPSHOT.jar'
+    dependsOn 'build'
+}
+
+
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
